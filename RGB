@@ -1,0 +1,20 @@
+red = int(input())
+green = int(input())
+blue = int(input())
+gray = 50
+
+if red > 0 and not red >= 255:
+    red = red - gray
+else: 
+    red = 0
+
+if green > 0 and not green >= 255:
+    green = green - gray
+else:
+    green = 0
+   
+if blue > 0 and not blue >= 255:
+    blue = blue - gray
+else:
+    blue = 0
+print(red, green, blue)
