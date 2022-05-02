@@ -1,0 +1,74 @@
+package practice_final;
+
+
+import java.util.Scanner;
+public class Practice_final 
+{
+  
+    public static void main(String[] args) 
+    {
+        Scanner k = new Scanner(System.in);
+        String keep_going = "yes";
+        while (keep_going.equalsIgnoreCase("yes"))
+        {
+            int number = getNumberofGrades();
+            double total = getTotalforGrades(number);
+            double average = getAverageofGrades(number,total);
+            char letter = getLetterGrade(average);
+            displayGradeLetter(average,letter);
+            System.out.print("Run again? Enter yes or no: ");
+            keep_going = k.nextLine();
+        }
+    }
+    public static int getNumberofGrades()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter number of grades you "
+                + "would like to average: ");
+        int number = in.nextInt();
+        
+        return number;
+    }
+    public static double getTotalforGrades(int num)
+    {
+        Scanner k = new Scanner(System.in);
+        double grade, total = 0;
+        for (int i = 0; i < num; i++)
+        {
+         System.out.print("Enter a grade: ");
+         grade = k.nextDouble();
+         total += grade;
+        }
+        return total;
+    }
+    public static double getAverageofGrades(int num, double total)
+    {
+        return total/num;
+        // or do this
+        //double average - total/num;
+        //return average
+    }
+    public static char getLetterGrade(double average)
+    {
+        char letter;
+       if(average >= 90)
+       {
+           letter = 'A';
+       }
+       else if (average >= 80)
+       {
+           letter = 'B';
+       }
+       else
+       {
+           letter = 'F';
+       }
+       return letter;
+    }
+    public static void displayGradeLetter(double average, char letter)
+    {
+        System.out.println("Your average of " + average + 
+                " is a letter grade of "+ letter + ".");
+    }
+    
+}
